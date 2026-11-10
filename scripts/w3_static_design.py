@@ -1,4 +1,4 @@
-"""Layer-S control for W3 (C-PLAN R1 construction, audited): all-Z x 68 375 shots + the 128 even-parity X/Y patterns on 8
+"""Layer-S control for W3: all-Z x 68 375 shots + the 128 even-parity X/Y patterns on 8
 positions, extended periodically over the 50 qubits, x 2 547 shots each. Verified with certify (every query, every batch).
 Output: derisk/results/HB1/W3_static_design.json"""
 import itertools, json, os, sys

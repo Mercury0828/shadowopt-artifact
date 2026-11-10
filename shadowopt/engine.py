@@ -1,4 +1,4 @@
-"""M1 engine layer (C-INDEX R1 resolution): append-only store with amortized appends, incremental bit-sliced bitmaps and
+"""M1 engine layer: append-only store with amortized appends, incremental bit-sliced bitmaps and
 packed rows with an explicit represented prefix (freshness contract), an exact row-range kernel (boundary-word masks),
 and a term-answer cache with append watermarks — usable over the bitmap path or over S* (the added "S* + cache" scan
 baseline, so recurring-workload gains are never credited to indexing alone).
@@ -137,7 +137,7 @@ class IncrementalIndex:
 # ----------------------------------------------------------------------------------------------------------------------
 @njit(parallel=True, cache=True)
 def _bitmap_range(Z, O, ptr, q, b, r0, r1, sel=False):
-    """Exact (m, s) of every term over rows [r0, r1): first and last word masked (GAP-1 of the C-INDEX R1 audit).
+    """Exact (m, s) of every term over rows [r0, r1): first and last word masked.
     sel=True: counts only (outcome planes never read; the returned s equals m and must not be used)."""
     T = ptr.shape[0] - 1
     M = np.zeros(T, np.int64)

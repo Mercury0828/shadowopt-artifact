@@ -1,5 +1,5 @@
 """Certified bracket [L, U] for the unrestricted offline hindsight optimum OPT of a batch sequence (replaces the restricted
-hindsight.py MIP as the H-b reference; C-PLAN R1, audited SOUND).
+hindsight.py MIP as the H-b reference).
 
 - Any feasible hindsight schedule can be moved to batch 1 without raising cost (counts only grow, setting charges do not
   increase, ceil is subadditive), so OPT is a static design problem over the sequence's final requirements.
@@ -38,7 +38,7 @@ def all_feasible(fam, m):
     for b in fam.batches:
         for q in b:
             worst = max(worst, query_halfwidth(q.coeffs, m[q.terms].astype(float), q.delta) / q.eps)
-    return worst <= 1.0, worst  # exact predicate HW <= eps (C-BOUND R1)
+    return worst <= 1.0, worst  # exact predicate HW <= eps
 
 
 def union_grouping(fam, cost):

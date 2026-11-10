@@ -100,7 +100,7 @@ def _halfwidth_d(c, m, delta, dout):
         if w[j] > wmax:
             wmax = w[j]
     for j in range(J):
-        w[j] = w[j] / wmax  # normalize: the split depends only on ratios (no overflow; C-BOUND R1 audits)
+        w[j] = w[j] / wmax  # normalize: the split depends only on ratios (no overflow)
     lo = math.log(1.0 / _G1)
     hi = math.log(1.0 / _g(delta / J))
     d = np.empty(J)

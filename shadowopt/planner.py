@@ -343,7 +343,7 @@ def check_feasible(st, fam, tau):
         m = st.best_counts(qy.terms)
         hw = query_halfwidth(qy.coeffs, m, qy.delta)
         worst = max(worst, hw / qy.eps)
-    return worst <= 1.0, worst  # exact predicate HW <= eps (C-BOUND R1)
+    return worst <= 1.0, worst  # exact predicate HW <= eps
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -604,4 +604,4 @@ def _check_sources(st, fam, tau, use_R=True, use_D=True):
         if use_D:
             m = np.maximum(m, st.mD[qy.terms])
         worst = max(worst, query_halfwidth(qy.coeffs, m, qy.delta) / qy.eps)
-    return worst <= 1.0, worst  # exact predicate HW <= eps (C-BOUND R1)
+    return worst <= 1.0, worst  # exact predicate HW <= eps

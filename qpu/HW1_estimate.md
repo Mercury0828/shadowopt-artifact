@@ -1,6 +1,6 @@
 # HW1 — cost-model fit on `ibm_cleveland` (ESTIMATE ONLY — NOTHING SUBMITTED)
 
-Status (historical, before the run): Phase 0 spent 0 QPU seconds. Approval = one message quoting this
+Status: **unsent; awaiting the owner's decision (HI-3).** Phase 0 spent 0 QPU seconds. Approval = one message quoting this
 file's sha256 and a QPU-second cap; the submission script defaults to dry-run and refuses to submit without
 `--approved HW1 --cap <seconds>` (guide §0e; `shadowopt/qpu.py` is written only after approval).
 
@@ -36,7 +36,7 @@ One pass = 64.5 s predicted; **two repetitions** (job-to-job variance) = **129 s
 ## Budget context
 `service.usage()` queried 2026-11-07 08:45 UTC (no job): limit **10 800 s per period** (period 2026-10-10 → 2026-11-07
 08:45 UTC, just rolled over), consumed 1 295 s, remaining 9 505 s at that instant (qpu/service_usage_20261107T084519Z.json).
-The budget is shared with other hardware projects; `service.usage()` is re-queried immediately before and
+The budget is shared with the owner's other hardware projects; `service.usage()` is re-queried immediately before and
 after the run and logged in `qpu/ledger.csv` with every job's `job.usage()`, queue time and calibration snapshot path.
 
 ## Fit and check

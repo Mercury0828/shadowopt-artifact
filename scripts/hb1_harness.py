@@ -93,7 +93,7 @@ def summary():
             if not f.endswith(".json"):
                 continue
             r = json.load(open(os.path.join(d, f)))
-            strict = all(pb.get("worst", 2.0) <= 1.0 for pb in r.get("per_batch", []))  # exact HW <= eps (C-BOUND R1)
+            strict = all(pb.get("worst", 2.0) <= 1.0 for pb in r.get("per_batch", []))  # exact HW <= eps
             if r.get("all_ok") and strict and "usage" in r:
                 key = (r["family"], r["N0"], r["method"])
                 if key in replace:

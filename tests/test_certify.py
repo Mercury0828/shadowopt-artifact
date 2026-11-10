@@ -60,7 +60,7 @@ def test_boundary_regression_no_tolerance():
 
 
 def test_delta_split_scale_invariant_minimizer():
-    """C-BOUND R1: with c = (1e14, 2e14), m = (100, 100), delta = .05 the minimizing split is ~(.0157052, .0342948)."""
+    """with c = (1e14, 2e14), m = (100, 100), delta = .05 the minimizing split is ~(.0157052, .0342948)."""
     from shadowopt.bounds import delta_split
     from shadowopt.workloads import Query
     d = delta_split(np.array([1e14, 2e14]), np.array([100.0, 100.0]), 0.05)
@@ -71,7 +71,7 @@ def test_delta_split_scale_invariant_minimizer():
 
 
 def test_delta_split_no_overflow_near_float_max():
-    """C-BOUND R1 audits: c = (1e308, 1.5e308), m = (100, 100): optimum ~(.0193802, .0306198), H ~ 7.3818730151e307."""
+    """Extreme coefficients: c = (1e308, 1.5e308), m = (100, 100): optimum ~(.0193802, .0306198), H ~ 7.3818730151e307."""
     from shadowopt.bounds import delta_split, query_halfwidth
     from shadowopt.workloads import Query
     c = np.array([1e308, 1.5e308])

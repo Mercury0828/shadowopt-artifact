@@ -43,9 +43,9 @@ def delta_split(c, m, delta):
     if J == 1:
         return np.array([delta])
     w = c / np.sqrt(m)
-    # scale-invariant bracket for the multiplier (C-BOUND R1): at lam = w_max / g(1) the largest term already takes
+    # scale-invariant bracket for the multiplier: at lam = w_max / g(1) the largest term already takes
     # d = 1 >= delta (sum > delta); at lam = w_max / g(delta / J) every d_j <= delta / J (sum <= delta)
-    w = w / float(np.max(w))  # the split depends only on ratios w_j / lambda: normalize (no overflow; C-BOUND R1 audits)
+    w = w / float(np.max(w))  # the split depends only on ratios w_j / lambda: normalize (no overflow)
     lo = np.log(1.0 / _g(np.array(1.0)))
     hi = np.log(1.0 / _g(np.array(delta / J)))
     for _ in range(100):

@@ -58,14 +58,33 @@ git -C third_party/aequo checkout 2aed9e15626f5f3988d45861b1746599f754a8d0
 
 ## Re-running the experiments
 
-Timings: generate the DEV stores with `python scripts/gen_stores.py`, then run `scripts/d1_timing.py`,
-`scripts/pathopt_calib.py` and `scripts/hb3_timing.py` on a quiet machine. Validity: `scripts/d2_coverage.py` and
-`scripts/hc_campaign.py`. QPU usage: `scripts/hb1_harness.py --a15` (DEV) and `scripts/hb1_test.py` (TEST), for
-example:
+All commands run from the repository root.
 
 ```
-python scripts/hb1_test.py --inst=W6:Cluster100 --N0=0 --seeds=100   # one test instance, all methods
-python scripts/hb1_test_partial.py                                     # per-family usage ratios
+# development stores (N = 1e6 uniformly random snapshots per DEV state)
+python scripts/gen_stores.py --threads 16
+
+# answering timings (Table II, Figs. 7-9), path calibration (Fig. 8) and checking timings (Sec. VIII-F); quiet machine
+python scripts/d1_timing.py
+python scripts/d1_analyze.py
+python scripts/pathopt_calib.py
+python scripts/hb3_timing.py
+
+# validity: decision rules (Fig. 4) and the replicate campaign (Fig. 12)
+python scripts/d2_coverage.py a,b,c,d,e,f,f_alt1,f_alt2
+python scripts/hc_campaign.py LiH 1000
+python scripts/hc_campaign.py TFIM20 1000
+python scripts/hc_campaign.py GHZ50 1000
+python scripts/hc_campaign.py LiH 1000 --summary      # likewise for TFIM20 and GHZ50
+
+# QPU usage on DEV (Table IV, Figs. 10-11): baseline workflows and controls first, then the engine runs, then the summary
+python scripts/hb1_harness.py
+python scripts/hb1_harness.py --a15
+python scripts/hb1_harness.py --a15 --summary
+
+# QPU usage on TEST, for example one instance with all methods
+python scripts/hb1_test.py --inst=W6:Cluster100 --N0=0 --seeds=100
+python scripts/hb1_test_partial.py
 ```
 
 QPU-usage results are computed with the fitted hardware cost model and simulated measurement outcomes; no QPU access

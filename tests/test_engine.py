@@ -1,5 +1,5 @@
 """Engine layer: incremental index and term cache are bit-identical to the naive reference across appends that end
-mid-word, stale-cache refreshes and repeated batches (C-INDEX R1 audit GAP-1/GAP-2)."""
+mid-word, stale-cache refreshes and repeated batches."""
 import numpy as np
 
 from shadowopt.engine import AppendStore, IncrementalIndex, TermCache, _bitmap_range
@@ -55,7 +55,7 @@ def test_range_kernel_boundaries():
 
 
 def test_negative_control_unmasked_range_fails():
-    """Evaluating whole words without the boundary mask must double count (the audit's failing case)."""
+    """Evaluating whole words without the boundary mask must double count."""
     rng = np.random.default_rng(2)
     n = 4
     app = AppendStore(n)

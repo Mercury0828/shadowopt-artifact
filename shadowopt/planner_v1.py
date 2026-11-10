@@ -49,7 +49,7 @@ def batch_feasible(st, fam, tau, extra=None):
             m = m + add if st.pooled else np.maximum(m, add)
         hw = query_halfwidth(qy.coeffs, m, qy.delta)
         worst = max(worst, hw / qy.eps)
-    return worst <= 1.0, worst  # exact predicate HW <= eps (C-BOUND R1)
+    return worst <= 1.0, worst  # exact predicate HW <= eps
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -64,13 +64,13 @@ def append_qs(st, fam, tau, cap_rows=None):
     def ok(N):
         cumR = st.stream.count(us, st.L + N)
         # pooled: pass the increment (added to the pooled total); non-pooled: pass the CUMULATIVE random count (max-ed
-        # with the other sources) — C-PLAN R1 finding (the increment under-counted the random source)
+        # with the other sources)
         add = cumR - base_R if st.pooled else cumR
         return batch_feasible(st, fam, tau, dict(zip(us.tolist(), add.tolist())))[0]
 
     if ok(0):
         return 0
-    lo, hi = 0, 1024  # lo is always a known-infeasible size (ok(0) is False here) — C-PLAN R1 audit finding 2
+    lo, hi = 0, 1024  # lo is always a known-infeasible size (ok(0) is False here)
     while not ok(hi):
         lo = hi
         hi *= 2
