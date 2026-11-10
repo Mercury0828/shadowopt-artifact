@@ -18,6 +18,7 @@ usage records.
 | `derisk/results/` | development-split results: answering timings (`D1`), validity (`D2`, `HC`), QPU usage (`HB1`, `HB1_A15`), checking (`HB3`), path calibration (`PATHOPT`) |
 | `results/HB1_TEST/` | held-out test-split QPU-usage runs, one JSON file per instance, seed, initial-store size and method |
 | `stores/states/` | prepared development and test states (state vectors, MPS or stabilizer tableaux) and exact truth values used by the tests and drivers |
+| `scripts/paper_figs.py`, `paper_figs/` | regenerates every figure of the paper from the result files; `figure_numbers.json` lists the numbers behind each figure |
 | `qpu/` | hardware usage records of the cost-model jobs and their fit (`HW1_fit.json`, `ledger.csv`, `raw/HW1/`) |
 
 ## Environment
