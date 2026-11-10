@@ -1,0 +1,20 @@
+{
+ "E0_sector": -7.882403410335487,
+ "E_check_abs_err": 8.881784197001252e-16,
+ "E_fci_pyscf": -7.882403410335498,
+ "E_from_terms": -7.882403410335488,
+ "E_hf": -7.862026959394131,
+ "basis": "sto-3g",
+ "bond_length_A": 1.5949,
+ "built_utc": "2026-11-07T08:03:34Z",
+ "const": -4.134254028892962,
+ "files": {
+  "state.npz": "69e5072884a3b11cafbaa6455faf757a0d78a7db5ab04f4f851ea45c04e5e735",
+  "truth_W1.npz": "1f33b8b1cdcae3b2654d00aaecb676ac9fb7d76a990bf5415d9ecd64d0395c4d"
+ },
+ "n": 12,
+ "n_electrons": 4,
+ "n_terms": 630,
+ "split": "DEV",
+ "state": "LiH"
+}

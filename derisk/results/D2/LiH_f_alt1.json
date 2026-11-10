@@ -1,0 +1,57 @@
+{
+ "state": "LiH",
+ "config": "f_alt1",
+ "delta": 0.05,
+ "eps": 0.25,
+ "t_need": 119,
+ "reps": 1000,
+ "checkpoint_terms": {
+  "0": "ZIIIIIIIIIII",
+  "1": "YZYIIIIIIIII",
+  "39": "YIZZYIIIIIII"
+ },
+ "results": {
+  "0": [
+   {
+    "label": "f_alt1",
+    "truth": -0.9999084936315834,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 6664.0
+   }
+  ],
+  "1": [
+   {
+    "label": "f_alt1",
+    "truth": -0.0002841814680208675,
+    "replicates": 1000,
+    "misses": 2,
+    "miss_rate": 0.002,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 21.0
+   }
+  ],
+  "39": [
+   {
+    "label": "f_alt1",
+    "truth": -0.00044867376379321793,
+    "replicates": 1000,
+    "misses": 3,
+    "miss_rate": 0.003,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 8.0
+   }
+  ]
+ },
+ "seconds": 391.33563232421875,
+ "label": "provisional \u2014 Phase 0, internal, DEV split",
+ "utc": "2026-11-07T11:31:57Z"
+}

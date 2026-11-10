@@ -1,0 +1,14 @@
+{
+ "W3_queries": 55,
+ "W3_terms": 2423,
+ "built_utc": "2026-11-07T08:04:18Z",
+ "definition": "analytic GHZ sampler and truth; truth cross-checked with stim peek_observable_expectation",
+ "files": {
+  "truth_W3.npz": "347fcb9affd643c432fad90a724e6c27d4ff61e6875e4a562d3e0d4a3a70e612"
+ },
+ "n": 50,
+ "split": "DEV",
+ "state": "GHZ50",
+ "stim_mismatch_5000_random_terms": 0,
+ "stim_mismatch_W3_terms": 0
+}

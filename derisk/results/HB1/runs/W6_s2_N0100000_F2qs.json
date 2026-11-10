@@ -1,0 +1,1 @@
+{"name": "F2qs", "infeasible": true, "per_batch": [{"tau": 0, "U": 82.74293400230505, "ok": true, "worst": 0.9998481529853255}, {"tau": 1, "U": 5.795727425578306, "ok": true, "worst": 0.9998481529853255}], "family": "W6", "seed": 2, "N0": 100000, "method": "F2qs", "seconds": 61.59336042404175}

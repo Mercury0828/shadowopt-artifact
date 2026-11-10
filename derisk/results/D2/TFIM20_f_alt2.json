@@ -1,0 +1,29 @@
+{
+ "state": "TFIM20",
+ "config": "f_alt2",
+ "delta": 0.05,
+ "eps": 0.25,
+ "t_need": 119,
+ "reps": 1000,
+ "checkpoint_terms": {
+  "192": "YIIYIIIIIIIIIIIIIIII"
+ },
+ "results": {
+  "192": [
+   {
+    "label": "f_alt2",
+    "truth": -0.025144178034976747,
+    "replicates": 1000,
+    "misses": 36,
+    "miss_rate": 0.036,
+    "m_zero": 0,
+    "binom_p_greater": 0.9857800420883932,
+    "rejects_at_0.01": false,
+    "median_m": 2204.0
+   }
+  ]
+ },
+ "seconds": 167.95694947242737,
+ "label": "provisional \u2014 Phase 0, internal, DEV split",
+ "utc": "2026-11-07T11:41:41Z"
+}

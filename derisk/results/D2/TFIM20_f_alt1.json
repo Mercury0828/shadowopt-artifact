@@ -1,0 +1,57 @@
+{
+ "state": "TFIM20",
+ "config": "f_alt1",
+ "delta": 0.05,
+ "eps": 0.25,
+ "t_need": 119,
+ "reps": 1000,
+ "checkpoint_terms": {
+  "380": "ZZIIIIIIIIIIIIIIIIII",
+  "54": "IIIXXIIIIIIIIIIIIIII",
+  "278": "IIIIIYIIIYIIIIIIIIII"
+ },
+ "results": {
+  "380": [
+   {
+    "label": "f_alt1",
+    "truth": 0.5086695368295644,
+    "replicates": 1000,
+    "misses": 2,
+    "miss_rate": 0.002,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 2221.0
+   }
+  ],
+  "54": [
+   {
+    "label": "f_alt1",
+    "truth": 0.6099142650128568,
+    "replicates": 1000,
+    "misses": 2,
+    "miss_rate": 0.002,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 2226.0
+   }
+  ],
+  "278": [
+   {
+    "label": "f_alt1",
+    "truth": -0.010969414448734097,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 44.0
+   }
+  ]
+ },
+ "seconds": 257.2589359283447,
+ "label": "provisional \u2014 Phase 0, internal, DEV split",
+ "utc": "2026-11-07T11:25:26Z"
+}

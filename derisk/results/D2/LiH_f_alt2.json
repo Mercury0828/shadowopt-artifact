@@ -1,0 +1,29 @@
+{
+ "state": "LiH",
+ "config": "f_alt2",
+ "delta": 0.05,
+ "eps": 0.25,
+ "t_need": 119,
+ "reps": 1000,
+ "checkpoint_terms": {
+  "0": "ZIIIIIIIIIII"
+ },
+ "results": {
+  "0": [
+   {
+    "label": "f_alt2",
+    "truth": -0.9999084936315834,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 83.0
+   }
+  ]
+ },
+ "seconds": 2.729067087173462,
+ "label": "provisional \u2014 Phase 0, internal, DEV split",
+ "utc": "2026-11-07T11:41:44Z"
+}

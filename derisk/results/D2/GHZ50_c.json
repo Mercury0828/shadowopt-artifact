@@ -1,0 +1,189 @@
+{
+ "state": "GHZ50",
+ "config": "c",
+ "delta": 0.05,
+ "eps": 0.25,
+ "t_need": 119,
+ "reps": 1000,
+ "checkpoint_terms": {
+  "0": "ZZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "1": "ZIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "6": "ZZZZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+ },
+ "results": {
+  "0": [
+   {
+    "label": "N=500",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 55.5
+   },
+   {
+    "label": "N=1000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 111.0
+   },
+   {
+    "label": "N=2000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 222.0
+   },
+   {
+    "label": "N=4000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 445.0
+   },
+   {
+    "label": "N=8000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 888.0
+   }
+  ],
+  "1": [
+   {
+    "label": "N=500",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 55.0
+   },
+   {
+    "label": "N=1000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 112.0
+   },
+   {
+    "label": "N=2000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 223.0
+   },
+   {
+    "label": "N=4000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 445.0
+   },
+   {
+    "label": "N=8000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 890.0
+   }
+  ],
+  "6": [
+   {
+    "label": "N=500",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 3,
+    "miss_rate": 0.003,
+    "m_zero": 3,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 6.0
+   },
+   {
+    "label": "N=1000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 12.0
+   },
+   {
+    "label": "N=2000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 25.0
+   },
+   {
+    "label": "N=4000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 49.0
+   },
+   {
+    "label": "N=8000",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 99.0
+   }
+  ]
+ },
+ "seconds": 8.424162149429321,
+ "label": "provisional \u2014 Phase 0, internal, DEV split",
+ "utc": "2026-11-07T11:06:18Z"
+}

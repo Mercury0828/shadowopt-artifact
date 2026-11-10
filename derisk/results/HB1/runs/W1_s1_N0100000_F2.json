@@ -1,0 +1,1 @@
+{"name": "F2", "infeasible": true, "usage_lower_bound": 152775.96267036418, "per_batch": [], "family": "W1", "seed": 1, "N0": 100000, "method": "F2", "seconds": 87.08817434310913}

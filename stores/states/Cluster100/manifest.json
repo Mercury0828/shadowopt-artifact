@@ -1,0 +1,16 @@
+{
+ "built_utc": "2026-11-08T19:52:27Z",
+ "definition": "H on all qubits, CZ on (i, i+1)",
+ "files": {
+  "state.npz": "22a8804b168fe134bd69c9ad0a5edcbe24e040459cfa43e2ba26dd1a4129607c",
+  "truth_W3.npz": "3eeecea34c4e580bc769112a9a7c7990d223c19e162c5d47d7817898ee11f20e",
+  "truth_W6_s100.npz": "402868b460ebdfb2310261a7ea495b0d88fce4dcb39a0b6b2b5756e6c38569d2",
+  "truth_W6_s101.npz": "1ad2c46eaceee0a71dc51984e59656c2706ac6183c255875cc0b8987270a8f31",
+  "truth_W6_s102.npz": "8d4dd6cd59b449a22bca09262ad3573e15d79dc9a9eb99eb8d3bfae2527828f1",
+  "truth_W6_s103.npz": "480419b31d06cc7e0c05feebcef54f08e7b2139e0b5a7585383a8352c58727fc",
+  "truth_W6_s104.npz": "19af98fde638bc5554e123880d4c006068cf853dba4b5b1c66b339fee5db9ce7"
+ },
+ "n": 100,
+ "split": "TEST",
+ "state": "Cluster100"
+}

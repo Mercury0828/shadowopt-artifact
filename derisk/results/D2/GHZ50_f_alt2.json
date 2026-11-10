@@ -1,0 +1,29 @@
+{
+ "state": "GHZ50",
+ "config": "f_alt2",
+ "delta": 0.05,
+ "eps": 0.25,
+ "t_need": 119,
+ "reps": 1000,
+ "checkpoint_terms": {
+  "7": "XXXXIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+ },
+ "results": {
+  "7": [
+   {
+    "label": "f_alt2",
+    "truth": 0.0,
+    "replicates": 1000,
+    "misses": 73,
+    "miss_rate": 0.073,
+    "m_zero": 0,
+    "binom_p_greater": 0.0010059773196299895,
+    "rejects_at_0.01": true,
+    "median_m": 245.0
+   }
+  ]
+ },
+ "seconds": 156.5915470123291,
+ "label": "provisional \u2014 Phase 0, internal, DEV split",
+ "utc": "2026-11-07T11:38:53Z"
+}

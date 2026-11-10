@@ -1,0 +1,22 @@
+{
+ "E0_exact_lanczos": -25.107797111623814,
+ "E_mps": -25.10779711162374,
+ "J": 1.0,
+ "boundary": "open",
+ "built_utc": "2026-11-07T08:04:18Z",
+ "chi_cap": 64,
+ "chi_max_used": 23,
+ "definition": "the stored state is the MPS (renormalized); truth computed from its statevector",
+ "discarded_weight": 1.0327747748584625e-15,
+ "fidelity_mps_vs_exact": 1.0000000000000009,
+ "files": {
+  "state.npz": "1eb30943617323fc7c13dc59b9afb12040d5b490305cc07dc02b72114c02894c",
+  "truth_W2.npz": "dfd3d23877ce1085869647776099f5a20d7f3d62db7b0638bc0fc1d9615d19a4"
+ },
+ "h": 1.0,
+ "mps_norm_before_renorm": 1.0000000000000029,
+ "n": 20,
+ "split": "DEV",
+ "state": "TFIM",
+ "svd_cutoff_rel": 1e-08
+}

@@ -1,0 +1,21 @@
+{
+ "E_dmrg": -87.88844106812115,
+ "J": 1.0,
+ "boundary": "open",
+ "build_s": 3219.4853360652924,
+ "built_utc": "2026-11-09T06:52:50Z",
+ "chi_max": 128,
+ "chi_used": 69,
+ "converged": true,
+ "cutoff": 1e-10,
+ "definition": "the stored state IS the MPS (right-canonical, renormalized); truth from the MPS",
+ "files": {
+  "state.npz": "8face6f27492e149066480ed8b979f3e425322b4ca590f19d12b4262e40f6058",
+  "truth_W2.npz": "f5f335ae58b96c29baf5e1cffd5641b9485a8e1727afa3fa0663bad50c557a00"
+ },
+ "n": 50,
+ "norm_before": 0.9999999999999953,
+ "split": "TEST",
+ "state": "Heis50",
+ "su2_check_max_abs_diff_xx_zz": 7.869290041262467e-07
+}

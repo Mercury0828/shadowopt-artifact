@@ -1,0 +1,39 @@
+{
+ "E_check_abs_err": 4.689582056016661e-13,
+ "E_fci_pyscf": -107.65282873057878,
+ "E_from_terms": -107.65282873057924,
+ "E_hf": -107.49589330783446,
+ "basis": "sto-3g",
+ "build_s": 263.35215306282043,
+ "built_utc": "2026-11-09T05:53:56Z",
+ "const": -66.19281739570404,
+ "fci_vector_norm": 0.999999999999999,
+ "files": {
+  "state.npz": "3a676735667141d89df6a12a0649a97c948ef8fd952184bcf3a1bb44258a6064",
+  "truth_W1.npz": "96a1f8fddf77881d3c0957b33d8ab9db3078d1a4d6751d9147eee61b01c8ebdd"
+ },
+ "geometry": [
+  [
+   "N",
+   [
+    0.0,
+    0.0,
+    0.0
+   ]
+  ],
+  [
+   "N",
+   [
+    0.0,
+    0.0,
+    1.0977
+   ]
+  ]
+ ],
+ "n": 20,
+ "n_electrons": 14,
+ "n_terms": 2950,
+ "norb": 10,
+ "split": "TEST",
+ "state": "N2"
+}

@@ -1,0 +1,21 @@
+{
+ "built_utc": "2026-11-08T19:52:33Z",
+ "clifford_seed": 20261108,
+ "definition": "qiskit.quantum_info.random_clifford(50, seed) applied to |0...0>",
+ "files": {
+  "state.npz": "6edaa70c7a3f2c360bb892eb68228f446eaa2331a68c3a59776242b173e6a44e",
+  "truth_W4_s100.npz": "3b678650509b4c29f8ab330a4811370883e558111f2845d725798faafd82ccd5",
+  "truth_W4_s101.npz": "eac44e1413ae67d542c8a5016121ce5bac71e1e201f6ec4feeb9a388da81d67a",
+  "truth_W4_s102.npz": "60cab87b316d941b65c242ec8193f561d14d059c5e4d1c72227b09e920adaaeb",
+  "truth_W4_s103.npz": "e52c0eb886162a9390e2c19887a735949ec7884a1cfe3105e9ad2fe4adbd4aa8",
+  "truth_W4_s104.npz": "ee47967e765440823b140837900bb1bf32ad39e81862756bd1b48d6f804201d6",
+  "truth_W5_s100.npz": "92e9e7340db26d1b6bd629053d6853618b111939bd2fadee2d1f05b073405a0d",
+  "truth_W5_s101.npz": "d272b22fe1c21ea14ba40bb29b66c9aae525be6f34b4b3bab8520a0a53d922ab",
+  "truth_W5_s102.npz": "32eb19f9824ac17edde00102819e9b9fcc1a22af09ae3d026a229659b56e9eab",
+  "truth_W5_s103.npz": "382bb8eab0ec4b7b97402183d02ed7f0796aa66cbcf3c67ace8c8dcbc01b1df6",
+  "truth_W5_s104.npz": "d201f3aab99bd7a382e55588137b9ad2667729493a05859e35e17d00996847af"
+ },
+ "n": 50,
+ "split": "TEST",
+ "state": "Clifford50"
+}

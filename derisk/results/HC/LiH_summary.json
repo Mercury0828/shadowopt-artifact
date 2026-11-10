@@ -1,0 +1,41 @@
+{
+ "state": "LiH",
+ "replicates": 1000,
+ "checkpoints": 4,
+ "rejections": 0,
+ "max_rate": 0.0,
+ "cells": {
+  "0:0": {
+   "n": 1000,
+   "miss": 0,
+   "unavailable": 0,
+   "rate": 0.0,
+   "p_one_sided": 1.0,
+   "reject_at_0.01": false
+  },
+  "1:0": {
+   "n": 1000,
+   "miss": 0,
+   "unavailable": 0,
+   "rate": 0.0,
+   "p_one_sided": 1.0,
+   "reject_at_0.01": false
+  },
+  "2:0": {
+   "n": 1000,
+   "miss": 0,
+   "unavailable": 0,
+   "rate": 0.0,
+   "p_one_sided": 1.0,
+   "reject_at_0.01": false
+  },
+  "3:0": {
+   "n": 1000,
+   "miss": 0,
+   "unavailable": 0,
+   "rate": 0.0,
+   "p_one_sided": 1.0,
+   "reject_at_0.01": false
+  }
+ }
+}

@@ -1,0 +1,189 @@
+{
+ "state": "LiH",
+ "config": "c",
+ "delta": 0.05,
+ "eps": 0.25,
+ "t_need": 119,
+ "reps": 1000,
+ "checkpoint_terms": {
+  "0": "ZIIIIIIIIIII",
+  "1": "YZYIIIIIIIII",
+  "39": "YIZZYIIIIIII"
+ },
+ "results": {
+  "0": [
+   {
+    "label": "N=500",
+    "truth": -0.9999084936315834,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 167.0
+   },
+   {
+    "label": "N=1000",
+    "truth": -0.9999084936315834,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 334.0
+   },
+   {
+    "label": "N=2000",
+    "truth": -0.9999084936315834,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 666.0
+   },
+   {
+    "label": "N=4000",
+    "truth": -0.9999084936315834,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 1332.0
+   },
+   {
+    "label": "N=8000",
+    "truth": -0.9999084936315834,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 2665.0
+   }
+  ],
+  "1": [
+   {
+    "label": "N=500",
+    "truth": -0.0002841814680208675,
+    "replicates": 1000,
+    "misses": 8,
+    "miss_rate": 0.008,
+    "m_zero": 0,
+    "binom_p_greater": 0.9999999999999868,
+    "rejects_at_0.01": false,
+    "median_m": 18.0
+   },
+   {
+    "label": "N=1000",
+    "truth": -0.0002841814680208675,
+    "replicates": 1000,
+    "misses": 2,
+    "miss_rate": 0.002,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 37.0
+   },
+   {
+    "label": "N=2000",
+    "truth": -0.0002841814680208675,
+    "replicates": 1000,
+    "misses": 7,
+    "miss_rate": 0.007,
+    "m_zero": 0,
+    "binom_p_greater": 0.9999999999999982,
+    "rejects_at_0.01": false,
+    "median_m": 74.0
+   },
+   {
+    "label": "N=4000",
+    "truth": -0.0002841814680208675,
+    "replicates": 1000,
+    "misses": 7,
+    "miss_rate": 0.007,
+    "m_zero": 0,
+    "binom_p_greater": 0.9999999999999982,
+    "rejects_at_0.01": false,
+    "median_m": 147.0
+   },
+   {
+    "label": "N=8000",
+    "truth": -0.0002841814680208675,
+    "replicates": 1000,
+    "misses": 12,
+    "miss_rate": 0.012,
+    "m_zero": 0,
+    "binom_p_greater": 0.9999999999864329,
+    "rejects_at_0.01": false,
+    "median_m": 296.0
+   }
+  ],
+  "39": [
+   {
+    "label": "N=500",
+    "truth": -0.00044867376379321793,
+    "replicates": 1000,
+    "misses": 4,
+    "miss_rate": 0.004,
+    "m_zero": 3,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 6.0
+   },
+   {
+    "label": "N=1000",
+    "truth": -0.00044867376379321793,
+    "replicates": 1000,
+    "misses": 3,
+    "miss_rate": 0.003,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 12.0
+   },
+   {
+    "label": "N=2000",
+    "truth": -0.00044867376379321793,
+    "replicates": 1000,
+    "misses": 8,
+    "miss_rate": 0.008,
+    "m_zero": 0,
+    "binom_p_greater": 0.9999999999999868,
+    "rejects_at_0.01": false,
+    "median_m": 24.0
+   },
+   {
+    "label": "N=4000",
+    "truth": -0.00044867376379321793,
+    "replicates": 1000,
+    "misses": 8,
+    "miss_rate": 0.008,
+    "m_zero": 0,
+    "binom_p_greater": 0.9999999999999868,
+    "rejects_at_0.01": false,
+    "median_m": 49.0
+   },
+   {
+    "label": "N=8000",
+    "truth": -0.00044867376379321793,
+    "replicates": 1000,
+    "misses": 8,
+    "miss_rate": 0.008,
+    "m_zero": 0,
+    "binom_p_greater": 0.9999999999999868,
+    "rejects_at_0.01": false,
+    "median_m": 98.0
+   }
+  ]
+ },
+ "seconds": 72.95921850204468,
+ "label": "provisional \u2014 Phase 0, internal, DEV split",
+ "utc": "2026-11-07T11:12:01Z"
+}

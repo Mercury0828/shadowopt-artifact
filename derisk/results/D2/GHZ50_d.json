@@ -1,0 +1,60 @@
+{
+ "state": "GHZ50",
+ "config": "d",
+ "delta": 0.05,
+ "eps": 0.25,
+ "t_need": 119,
+ "reps": 1000,
+ "checkpoint_terms": {
+  "0": "ZZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "1": "ZIZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII",
+  "6": "ZZZZIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII"
+ },
+ "results": {
+  "0": [
+   {
+    "label": "d",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 222.0,
+    "n_target_answers": 0
+   }
+  ],
+  "1": [
+   {
+    "label": "d",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 223.0,
+    "n_target_answers": 0
+   }
+  ],
+  "6": [
+   {
+    "label": "d",
+    "truth": 1.0,
+    "replicates": 1000,
+    "misses": 0,
+    "miss_rate": 0.0,
+    "m_zero": 0,
+    "binom_p_greater": 1.0,
+    "rejects_at_0.01": false,
+    "median_m": 119.0,
+    "n_target_answers": 1000
+   }
+  ]
+ },
+ "seconds": 2.568939447402954,
+ "label": "provisional \u2014 Phase 0, internal, DEV split",
+ "utc": "2026-11-07T11:06:21Z"
+}
