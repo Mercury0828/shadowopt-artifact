@@ -1,5 +1,7 @@
 # SHADOWOPT artifact
 
+Archived at Zenodo, DOI [10.5281/zenodo.24120997](https://doi.org/10.5281/zenodo.24120997).
+
 Code and data for the paper *SHADOWOPT: Indexed, Certified Query Processing over Append-Only Stores of Quantum
 Measurements* (Jiachen Shen and Hui Zhong, submitted to IEEE ICDE 2027).
 
