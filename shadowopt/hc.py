@@ -1,4 +1,4 @@
-"""H-c replicate machinery (prereg/M1.md §6; C-BOUND Lemmas 1–2). One replicate = one independent run of the engine's
+"""H-c replicate machinery. One replicate = one independent run of the engine's
 decisions on a fresh random store with fresh outcomes:
 
 - random store: N0 uniform rows (fresh basis seed), outcomes sampled per row by the state's sampler;

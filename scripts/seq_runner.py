@@ -110,7 +110,7 @@ def run(state, N0=100_000, seed=0, log=print):
 
 
 def main():
-    try:  # machine sharing: BelowNormal, optional single-core pinning (D:/_shared/compute_reservations.md)
+    try:  # machine sharing: BelowNormal, optional single-core pinning
         import psutil
         psutil.Process().nice(psutil.BELOW_NORMAL_PRIORITY_CLASS)
         if os.environ.get("SHADOWOPT_CPU"):

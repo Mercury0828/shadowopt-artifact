@@ -1,4 +1,4 @@
-"""Partial report of the H-b'1 TEST campaign at the owner's write-up time box (DESIGN_DECISIONS #16). Same rules as
+"""Report of the H-b'1 TEST campaign over the runs that are present. Same rules as
 hb1_test.summary (feasible, strict HW <= eps; seed/instance geometric means; best layer-R = minimum), applied to the
 (instance, seed) cells where ENG and every FEASIBLE layer-R method are present. A layer-R method whose runs hit the
 planner's round cap without certifying (infeasible) is excluded from the minimum, as on DEV (A9), and its usage lower

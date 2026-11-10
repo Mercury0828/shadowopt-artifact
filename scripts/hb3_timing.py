@@ -1,5 +1,5 @@
 """PREREG A8: DEV timing screen for H-b′3. Refuses to run unless the lock file ($SHADOWOPT_LOCK_FILE, default CPU_LOCK.txt)'s HOLDER line names
-shadowopt (timings only under the lock; also write a line in D:/_shared/compute_reservations.md before starting).
+shadowopt (timings only under the lock).
 
 Post-append rows = the last 1e4 rows of each N = 1e6 DEV store (independent samples of the same state's sampler): the
 index is built on the first 990 000 rows, then those 1e4 rows are appended before the post-append check.
@@ -107,7 +107,7 @@ def main():
         row["answer_T"] = timed(ans_T)
         # post-append: append the held-out rows once, then one check per source (refresh charged to the check)
         app.append(st.bases[-HOLD:], st.outcomes[-HOLD:])
-        # shared maintenance timed once and charged equally to every source (CODE-certify R1 GAP 2); then each source's
+        # shared maintenance timed once and charged equally to every source; then each source's
         # check runs on the refreshed index (its own delta work only: cache deltas for Bc/Sc, full passes for B/S)
         t0 = time.perf_counter()
         ix.refresh()

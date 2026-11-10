@@ -85,7 +85,7 @@ SEEDS = (1, 2)
 def summary():
     """Ratios with seeds matched by ID (each method needs exactly SEEDS), zero costs handled explicitly (0/0 = tie = 1.0;
     a positive engine cost against a zero reference = inf), and the headline aggregate only if every family is complete
-    (CODE-planners R1 fixes)."""
+."""
     recs = {}
 
     def load(d, replace):
@@ -106,7 +106,7 @@ def summary():
         load(RUNS, {(fam, N0, "ENG") for fam in FAMS if fam not in C1_SINGLE for N0 in N0S})
     else:
         load(RUNS, set())
-    # seed-geometric mean; any zero-cost seed makes it 0 (its limit) — prereg/M1.md §6 (CODE-planners R2)
+    # seed-geometric mean; any zero-cost seed makes it 0 (its limit)
     gm = lambda xs: 0.0 if any(x == 0 for x in xs) else math.exp(np.mean(np.log(xs)))
 
     def val(fam, N0, m):

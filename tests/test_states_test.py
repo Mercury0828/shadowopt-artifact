@@ -1,4 +1,4 @@
-"""TEST-state builders (prereg/M1.md M1-A3) checked on small instances against independent references."""
+"""TEST-state builders checked on small instances against independent references."""
 import numpy as np
 
 from shadowopt.states import expectations_statevector, mps_to_statevector, tfim_hamiltonian

@@ -1,5 +1,5 @@
 """HW1 runner (guide §0e). DRY-RUN BY DEFAULT. Submits only with `--submit --approved HW1 --cap <s>` (cap <= 200, the
-owner's approval of 2026-11-07, DESIGN_DECISIONS #11) and only if qpu/HW1_estimate.md still has the approved sha256.
+approval of 2026-11-07) and only if qpu/HW1_estimate.md still has the approved sha256.
 
 Resumable: every finished job is a row of qpu/ledger.csv (keyed by grid name + repetition); a submitted-but-unrecorded job
 id is kept in qpu/HW1_pending.json and retrieved on restart instead of resubmitting. Stops before any job whose predicted

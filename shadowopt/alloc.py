@@ -103,7 +103,7 @@ def allocate(m_rows, Cr, bptr, tl, bcoef, bdelta, beps, k0, t_eff=1.0, rounds=RO
 
 
 def engine_orders(universe, n_random_orders=4):
-    """The A13 order set with CONTENT-based keys (CODE-alloc R1 FATAL: keys must not depend on the catalogue size or on
+    """The A13 order set with CONTENT-based keys (: keys must not depend on the catalogue size or on
     term indices, which contract C0 does not disclose): weight descending, need descending, weight ascending (ties by the
     term's (support, bases)), and n_random_orders seeded pseudo-random orders = BLAKE2b of (seed, r, support, bases).
     Each key is a function of (term index, need) that reads only that term's own content."""

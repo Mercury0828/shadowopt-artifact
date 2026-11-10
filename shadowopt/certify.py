@@ -242,7 +242,7 @@ class BatchCSR:
 def certify(csr, slot_counts):
     """slot_counts: counts of csr.terms (aligned). Returns (halfwidths, certified mask)."""
     hw = _batch_halfwidths(csr.qptr, csr.qterm, csr.qcoef, csr.qdelta, np.asarray(slot_counts, np.float64))
-    return hw, hw <= csr.qeps  # the frozen condition HW <= eps, no tolerance (CODE-certify R1 GAP 1)
+    return hw, hw <= csr.qeps  # the frozen condition HW <= eps, no tolerance
 
 
 # ----------------------------------------------------------------------------------------------------------------------

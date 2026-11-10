@@ -1,4 +1,4 @@
-"""Build the TEST states and their exact truth (prereg/M1.md §2, M1-A3). Run in the pinned .venv, one light process
+"""Build the TEST states and their exact truth. Run in the pinned .venv, one light process
 (NUMBA/OMP/BLAS threads = 1, BelowNormal). Outputs stores/states/<name>/{state.npz, truth_<family>[_s<seed>].npz,
 manifest.json}. Resumable per state (a state with a manifest is skipped). Usage: test_states.py [names...]"""
 import json

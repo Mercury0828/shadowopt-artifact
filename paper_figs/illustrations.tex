@@ -1,0 +1,68 @@
+% Illustrations of the paper that are not generated from result files (LaTeX sources, IEEEtran + tikz with the positioning library).
+
+% ---- Figure 2 (running example) ----
+\begin{figure}[t]
+\centering
+\small\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{c|cccc|cccc|ccc}
+\hline
+row & \multicolumn{4}{c|}{bases $b$ (qubit 0 to 3)} & \multicolumn{4}{c|}{outcomes $o$} & $P_1$ & $P_2$ & $P_3$ \\
+\hline
+1 & Z & Z & X & X & 0 & 1 & 0 & 1 & $-1$ & $-1$ & $+1$ \\
+2 & Z & Z & Z & X & 0 & 0 & 1 & 1 & $+1$ & & \\
+3 & X & Z & X & X & 1 & 1 & 0 & 0 & & $+1$ & \\
+4 & Z & Z & X & Y & 1 & 0 & 0 & 1 & $-1$ & & \\
+5 & Y & X & X & X & 0 & 1 & 1 & 0 & & $-1$ & \\
+6 & Z & Z & X & X & 1 & 1 & 1 & 1 & $+1$ & $+1$ & $+1$ \\
+7 & Z & Y & Z & Z & 0 & 0 & 0 & 0 & & & \\
+8 & X & X & X & X & 1 & 0 & 1 & 0 & & $-1$ & \\
+\hline
+\multicolumn{9}{r|}{count $m$ / parity sum $s$} & 4\,/\,0 & 5\,/\,$-1$ & 2\,/\,2 \\
+\hline
+\end{tabular}
+\caption{Running example: a store of eight snapshots and the batch $P_1=Z_0Z_1$, $P_2=X_2X_3$, $P_3=Z_0Z_1X_2X_3$.
+An entry is the term's parity on a matching row.}\label{fig:example}
+\end{figure}
+
+% ---- Table I (symbols) ----
+\begin{table}[t]
+\centering
+\caption{Symbols and what they correspond to in the system.}\label{tab:notation}
+\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lp{6.4cm}}
+\hline
+symbol & meaning in the system \\
+\hline
+$n$, $N$ & qubits of the prepared state, rows (snapshots) in the store \\
+$P$, $k$ & a term (basis on $k$ qubits), a predicate plus a parity aggregate \\
+$m_P$, $s_P$ & rows matching $P$ (count), sum of their parities \\
+$\varepsilon$, $\delta$ & accuracy target and failure probability of a query \\
+$\mathrm{HW}(m)$ & stated half-width, from counts only (Eq.~\ref{eq:hw}) \\
+setting & one basis per qubit, one parameter binding of the measurement circuit \\
+shot & one execution of a setting, which appends one snapshot \\
+$U$ & QPU usage billed for a job, the time the QPU is locked (Eq.~\ref{eq:cost}) \\
+$t_{\mathrm{sub}}$ & overhead per sub-job, paid once per submitted circuit batch \\
+batch time & wall time from receiving a batch to returning all $(m_P,s_P)$ \\
+\hline
+\end{tabular}
+\end{table}
+
+% ---- Figure 6 (architecture, TikZ) ----
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[node distance=5mm and 6mm, every node/.style={font=\scriptsize},
+  box/.style={draw, rounded corners, minimum height=7mm, align=center, inner sep=1.5pt, text width=19mm}]
+\node[box] (store) {append-only store\\ (one state, one epoch)};
+\node[box, right=of store] (paths) {access paths\\ bitmaps, trie, views\\ (Sec.~\ref{sec:access_paths})};
+\node[box, right=of paths] (check) {check from counts\\ $\mathrm{HW}(m)\le\varepsilon$\\ (Sec.~\ref{sec:certify})};
+\node[box, below=of check] (plan) {completion plan\\ verified by the check\\ (Sec.~\ref{sec:completion})};
+\node[box, below=of store] (qpu) {QPU job\\ (usage $U$, Eq.~\ref{eq:cost})};
+\node[box, below=of paths, text width=15mm] (batch) {batch of\\ queries};
+\draw[->] (store) -- (paths); \draw[->] (paths) -- node[above]{$m_P,s_P$} (check);
+\draw[->] (batch) -- (paths);
+\draw[->] (check) -- node[right, align=left]{not\\ certified} (plan); \draw[->] (plan) -- ++(0,-7mm) -| (qpu);
+\draw[->] (qpu) -- node[left]{append} (store);
+\draw[->] (check.north) -- ++(0,3mm) node[above]{certified answers};
+\end{tikzpicture}
+\caption{Architecture. One maintained state per store drives answering, checking and completion.}\label{fig:arch}
+\end{figure}

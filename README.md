@@ -20,12 +20,14 @@ usage records.
 | `derisk/results/` | development-split results: answering timings (`D1`), validity (`D2`, `HC`), QPU usage (`HB1`, `HB1_A15`), checking (`HB3`), path calibration (`PATHOPT`) |
 | `results/HB1_TEST/` | held-out test-split QPU-usage runs, one JSON file per instance, seed, initial-store size and method |
 | `stores/states/` | prepared development and test states (state vectors, MPS or stabilizer tableaux) and exact truth values used by the tests and drivers |
-| `scripts/paper_figs.py`, `paper_figs/` | regenerates every figure of the paper from the result files; `figure_numbers.json` lists the numbers behind each figure |
+| `scripts/paper_figs.py`, `paper_figs/` | regenerates every data figure of the paper (Figs. 1, 3-5, 7-12) from the result files into `paper/figs/`; `paper_figs/illustrations.tex` holds the LaTeX of the illustrations (Fig. 2, Fig. 6, Table I); `figure_numbers.json` lists the numbers behind each figure |
 | `qpu/` | hardware usage records of the cost-model jobs and their fit (`HW1_fit.json`, `ledger.csv`, `raw/HW1/`) |
 
 ## Environment
 
-Python 3.11; package versions in `requirements.txt`. Timing scripts pin threads explicitly (`NUMBA_NUM_THREADS`,
+Python 3.11 with the package versions in `requirements.txt` (`pip install -r requirements.txt`). The paper's timings
+ran on one workstation with an Intel Core i9-13900K (8 performance and 16 efficiency cores), 64 GB of memory and
+Windows 11; the QPU-usage results are deterministic computations and do not depend on the machine. Timing scripts pin threads explicitly (`NUMBA_NUM_THREADS`,
 `OMP_NUM_THREADS`) and record the thread count in every result. They run only while a lock file
 (`$SHADOWOPT_LOCK_FILE`, default `CPU_LOCK.txt`) has a first line starting with `HOLDER: shadowopt`; this guard keeps
 timings on a quiet machine.
@@ -35,12 +37,31 @@ timings on a quiet machine.
 Three reference implementations are used as published and are not redistributed here. Clone them into `third_party/`:
 
 ```
-git clone https://github.com/hsinyuan-huang/predicting-quantum-properties third_party/hkp            # commit dce179128f7fd91a8f9128f29be5492e8a1461bb
-git clone https://gitlab.com/GreschAI/shadowgrouping third_party/shadowgrouping                      # commit ac472cd648711ffe6ffdc3f78fd7d5169eb92cf2
-git clone https://github.com/AndrewJena/VQE_measurement_optimization third_party/aequo               # commit 2aed9e15626f5f3988d45861b1746599f754a8d0
+git clone https://github.com/hsinyuan-huang/predicting-quantum-properties third_party/hkp
+git -C third_party/hkp checkout dce179128f7fd91a8f9128f29be5492e8a1461bb
+git clone https://gitlab.com/GreschAI/shadowgrouping third_party/shadowgrouping
+git -C third_party/shadowgrouping checkout ac472cd648711ffe6ffdc3f78fd7d5169eb92cf2
+git clone https://github.com/AndrewJena/VQE_measurement_optimization third_party/aequo
+git -C third_party/aequo checkout 2aed9e15626f5f3988d45861b1746599f754a8d0
 ```
 
-## Reproducing the QPU-usage results
+## Reproducing the paper from the frozen result files
+
+| Paper item | How to reproduce |
+|---|---|
+| Figs. 1, 3, 4, 5, 7, 8, 9, 10, 11, 12 | `python scripts/paper_figs.py` (functions `fig_motivation`, `fig_select`, `fig_decisions`, `fig_costmodel`, `fig_speedup`, `fig_pathmodel`, `fig_scaling`, `fig_attribution`, `fig_perbatch`, `fig_validity`); the numbers behind each figure are written to `paper/figs/figure_numbers.json` |
+| Fig. 2, Fig. 6, Table I | LaTeX in `paper_figs/illustrations.tex` (illustrations, not data) |
+| Table II (batch times) | `derisk/results/D1/results.jsonl`, records `batch\|<state>\|1000000\|<path>\|T16` (median of 5) and `paired\|...` (least favourable readings); `python scripts/d1_analyze.py` recomputes `D1_summary.json` |
+| Table III (space, build) | `derisk/results/D1/results.jsonl`, records with `kind` = `build` at N = 1e6 (fields `packed_bytes`, `bitmap_bytes`, `view_bytes`, `bitmap_build_s`, `view_select_s`, `view_build_s`) |
+| Table IV (QPU usage) | DEV: `python scripts/hb1_harness.py --a15 --summary` (results in `derisk/results/HB1*/`); TEST: `python scripts/hb1_test_partial.py` (writes `results/HB1_TEST/partial_summary.json`, column N0 = 0) |
+| Checking timings (Sec. VIII-F) | `derisk/results/HB3/results.json` |
+
+## Re-running the experiments
+
+Timings: generate the DEV stores with `python scripts/gen_stores.py`, then run `scripts/d1_timing.py`,
+`scripts/pathopt_calib.py` and `scripts/hb3_timing.py` on a quiet machine. Validity: `scripts/d2_coverage.py` and
+`scripts/hc_campaign.py`. QPU usage: `scripts/hb1_harness.py --a15` (DEV) and `scripts/hb1_test.py` (TEST), for
+example:
 
 ```
 python scripts/hb1_test.py --inst=W6:Cluster100 --N0=0 --seeds=100   # one test instance, all methods
@@ -48,7 +69,10 @@ python scripts/hb1_test_partial.py                                     # per-fam
 ```
 
 QPU-usage results are computed with the fitted hardware cost model and simulated measurement outcomes; no QPU access
-is needed. Hardware runs (`scripts/hw1_run.py`) need an IBM Quantum account saved locally by `qiskit_ibm_runtime`.
+is needed. The hardware cost-model jobs are recorded in `qpu/` (plan in `qpu/HW1_estimate.md`, records in
+`qpu/ledger.csv` and `qpu/raw/HW1/`, calibration snapshot in `qpu/calibrations/`, fit by `scripts/hw1_fit.py`).
+Re-running them (`scripts/hw1_run.py`) needs an IBM Quantum account saved locally by `qiskit_ibm_runtime` and spends
+paid QPU time.
 
 ## License
 

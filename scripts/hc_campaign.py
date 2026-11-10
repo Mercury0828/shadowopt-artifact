@@ -1,8 +1,8 @@
-"""H-c replicate campaign (prereg/M1.md §6 checkpoints; PREREG A12 for the DEV machinery screen).
+"""H-c replicate campaign.
 Usage: hc_campaign.py <state> <n_replicates> [--summary]   (resumable by validated replicate IDs)
 Checkpoints: W1 (LiH) the energy at every batch; W2 (TFIM20) the first 10 correlators at batches 0 and 5;
 W3 (GHZ50) every window fidelity at batch 0. Replicate r uses seed [1_000_000 + r] (fresh store and outcomes). The same replicate id gives related random streams for
-different states (CODE-hc R1 MINOR): states are tested separately (per-checkpoint marginal claim), so this cross-state
+different states: states are tested separately (per-checkpoint marginal claim), so this cross-state
 dependence does not affect any reported test; it is documented, not changed mid-campaign.
 Output: derisk/results/HC/<state>.jsonl and a summary (misses per checkpoint, exact one-sided binomial p, unavailable).
 """
@@ -37,7 +37,7 @@ def checkpoints(state, fam):
 def _valid_rows(fn):
     """Complete JSON records only. Only the LAST non-empty line may be a truncated record (it is dropped); a corrupt record
     anywhere else raises; duplicate ids raise; the file is rewritten so that it always ends with a newline before any
-    append (CODE-hc R1 GAP 1, R2)."""
+    append."""
     if not os.path.exists(fn):
         return []
     raw = open(fn).read()

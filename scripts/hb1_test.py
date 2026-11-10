@@ -1,4 +1,4 @@
-"""H-b'1 / H-b'2 TEST campaign (prereg/M1.md §1, §3 frozen by M1-A4, §6, M1-A3, M1-A5). Untimed, resumable, one JSON per
+"""H-b'1 / H-b'2 TEST campaign. Untimed, resumable, one JSON per
 run in results/HB1_TEST/runs/<fam>_<inst>_s<seed>_N0<N0>_<method>.json. Run in the pinned .venv, single-thread,
 BelowNormal; several processes may run disjoint --inst= shards. `--summary` computes the registered aggregate.
 

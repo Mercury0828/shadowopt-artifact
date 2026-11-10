@@ -26,7 +26,7 @@ def final_requirements(fam):
     for b in fam.batches:
         for q in b:
             if len(q.terms) == 1:
-                a = float(abs(q.coeffs[0]))  # coefficient-aware (CODE-planners R1 FATAL)
+                a = float(abs(q.coeffs[0]))  # coefficient-aware
                 n = int(math.ceil(2 * math.log(2 / q.delta) * a * a / q.eps ** 2 - 1e-9))
                 u = int(q.terms[0])
                 req[u] = max(req.get(u, 0), n)

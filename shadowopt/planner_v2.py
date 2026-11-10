@@ -13,7 +13,7 @@ from .planner_v1 import PooledState, batch_feasible
 
 def _need(q):
     """Single-term threshold incl. the coefficient: HW = |a| sqrt(2 ln(2/delta)/m) <= eps  <=>  m >= 2 ln(2/delta) a^2 / eps^2
-    (CODE-planners R1: the coefficient was omitted; registered W2/W4/W6 use a = 1, so their runs are unaffected)."""
+."""
     a = float(abs(q.coeffs[0]))
     return int(math.ceil(2 * math.log(2 / q.delta) * a * a / q.eps ** 2 - 1e-9))
 

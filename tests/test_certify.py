@@ -51,7 +51,7 @@ def test_count_sources_agree_and_completion_verifies():
 
 
 def test_boundary_regression_no_tolerance():
-    """CODE-certify R1 GAP 1: a half-width just above eps must not be certified."""
+    """: a half-width just above eps must not be certified."""
     from shadowopt.workloads import Query
     q = Query(np.array([0]), np.array([1.0]), 0.2716203031479881, 0.05)
     csr = BatchCSR([q])
