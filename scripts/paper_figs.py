@@ -255,7 +255,7 @@ def fig_perbatch():
              ("F4", "derandomization", "#000000", "v"), ("F3qsA", "grouping + bound-aware alloc.", C["S"], "^"),
              ("ENG", "SHADOWOPT", C["ENG"], "o")]
     eps = [0.5, 0.3, 0.2, 0.1]
-    fig, ax = plt.subplots(figsize=(W1C, 1.9))
+    fig, ax = plt.subplots(figsize=(W1C, 1.75))
     out = {}
     for m, lab, col, mk in meths:
         r = J(f"results/HB1_TEST/runs/W1_BeH2_s100_N00_{m}.json")
