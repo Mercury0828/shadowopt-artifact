@@ -55,7 +55,7 @@ def fig_motivation():
     """(a) batch time vs n on synthetic calibration stores (N=1e6, 16 threads); (b) TEST W1 BeH2 QPU usage per method."""
     r = J("derisk/results/PATHOPT/rates.json")
     pts = sorted([p for p in r["points"] if p["N"] == 1_000_000], key=lambda p: p["n"])
-    fig, ax = plt.subplots(1, 2, figsize=(7.0, 1.45), gridspec_kw={"width_ratios": [1, 1.5]})
+    fig, ax = plt.subplots(1, 2, figsize=(7.0, 1.45), gridspec_kw={"width_ratios": [1, 1.5], "wspace": 0.32})
     ns = [p["n"] for p in pts]
     for k, lab in [("sstar", "S* scan"), ("bitmap", "bitmaps"), ("shared", "shared plans")]:
         key = {"sstar": "S*", "bitmap": "bitmaps", "shared": "shared"}[k]
@@ -76,10 +76,10 @@ def fig_motivation():
     for x, v in zip(xs, vals):
         ax[1].text(x, v * 1.04, f"{v:.1f} h", ha="center", va="bottom", fontsize=7.5)
     ax[1].set_xticks(xs, [n for _, n in names], fontsize=7.5)
-    ax[1].set_ylabel("QPU usage (hours)")
+    ax[1].set_ylabel("estimated QPU usage (h)")
     ax[1].set_ylim(0, max(vals) * 1.22)
     ax[1].grid(axis="x", visible=False)
-    ax[1].set_title("(b) estimating the BeH2 energy to 0.1 (TEST)", fontsize=8)
+    ax[1].set_title("(b) four BeH2 energy queries, cumulative (TEST)", fontsize=8)
     save(fig, "fig_motivation")
     return {"n": ns, "sstar_ms": [p["sstar"][1] * 1e3 for p in pts], "bitmap_ms": [p["bitmap"][1] * 1e3 for p in pts],
             "usage_h": dict(zip([m for m, _ in names], vals)), "F2_lower_bound_h": lb["usage_lower_bound"] / 3600}
@@ -264,7 +264,7 @@ def fig_perbatch():
         ax.plot(range(len(cum)), cum, marker=mk, ms=3.2, color=col, label=lab,
                 ls="--" if m == "F3qsA" else "-")
     ax.set_xticks(range(4), [f"target {e}" for e in eps])
-    ax.set_ylabel("cum. QPU usage (h)")
+    ax.set_ylabel("cum. est. usage (h)")
     ax.set_yscale("log")
     plainlog(ax)
     ax.set_ylim(0.02, 30)

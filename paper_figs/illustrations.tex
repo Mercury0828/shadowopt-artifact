@@ -47,10 +47,10 @@ batch time & wall time from receiving a batch to returning all $(m_P,s_P)$ \\
 \end{tabular}
 \end{table}
 
-% ---- Figure 6 (architecture, TikZ) ----
+% ---- Figure 5 (architecture, TikZ) ----
 \begin{figure}[t]
 \centering
-\begin{tikzpicture}[node distance=5mm and 6mm, every node/.style={font=\scriptsize},
+\begin{tikzpicture}[node distance=5mm and 4mm, every node/.style={font=\footnotesize},
   box/.style={draw, rounded corners, minimum height=7mm, align=center, inner sep=1.5pt, text width=19mm}]
 \node[box] (store) {append-only store\\ (one state, one epoch)};
 \node[box, right=of store] (paths) {access paths\\ bitmaps, trie, views\\ (Sec.~\ref{sec:access_paths})};

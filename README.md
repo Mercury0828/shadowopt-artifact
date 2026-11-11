@@ -20,7 +20,7 @@ usage records.
 | `derisk/results/` | development-split results: answering timings (`D1`), validity (`D2`, `HC`), QPU usage (`HB1`, `HB1_A15`), checking (`HB3`), path calibration (`PATHOPT`) |
 | `results/HB1_TEST/` | held-out test-split QPU-usage runs, one JSON file per instance, seed, initial-store size and method |
 | `stores/states/` | prepared development and test states (state vectors, MPS or stabilizer tableaux) and exact truth values used by the tests and drivers |
-| `scripts/paper_figs.py`, `paper_figs/` | regenerates every data figure of the paper (Figs. 1, 3-5, 7-12) from the result files into `paper/figs/`; `paper_figs/illustrations.tex` holds the LaTeX of the illustrations (Fig. 2, Fig. 6, Table I); `figure_numbers.json` lists the numbers behind each figure |
+| `scripts/paper_figs.py`, `paper_figs/` | regenerates every data figure of the paper from the result files into `paper/figs/`; `paper_figs/illustrations.tex` holds the LaTeX of the illustrations (Fig. 2, Fig. 5, Table I); `figure_numbers.json` lists the numbers behind each figure |
 | `qpu/` | hardware usage records of the cost-model jobs and their fit (`HW1_fit.json`, `ledger.csv`, `raw/HW1/`) |
 
 ## Environment
@@ -49,12 +49,13 @@ git -C third_party/aequo checkout 2aed9e15626f5f3988d45861b1746599f754a8d0
 
 | Paper item | How to reproduce |
 |---|---|
-| Figs. 1, 3, 4, 5, 7, 8, 9, 10, 11, 12 | `python scripts/paper_figs.py` (functions `fig_motivation`, `fig_select`, `fig_decisions`, `fig_costmodel`, `fig_speedup`, `fig_pathmodel`, `fig_scaling`, `fig_attribution`, `fig_perbatch`, `fig_validity`); the numbers behind each figure are written to `paper/figs/figure_numbers.json` |
-| Fig. 2, Fig. 6, Table I | LaTeX in `paper_figs/illustrations.tex` (illustrations, not data) |
-| Table II (batch times) | `derisk/results/D1/results.jsonl`, records `batch\|<state>\|1000000\|<path>\|T16` (median of 5) and `paired\|...` (least favourable readings); `python scripts/d1_analyze.py` recomputes `D1_summary.json` |
-| Table III (space, build) | `derisk/results/D1/results.jsonl`, records with `kind` = `build` at N = 1e6 (fields `packed_bytes`, `bitmap_bytes`, `view_bytes`, `bitmap_build_s`, `view_select_s`, `view_build_s`) |
-| Table IV (QPU usage) | DEV: `python scripts/hb1_harness.py --a15 --summary` (results in `derisk/results/HB1*/`); TEST: `python scripts/hb1_test_partial.py` (writes `results/HB1_TEST/partial_summary.json`, column N0 = 0) |
-| Checking timings (Sec. VIII-F) | `derisk/results/HB3/results.json` |
+| Figs. 1, 3, 4, 6, 7, 8, 9, 10 | `python scripts/paper_figs.py` (functions `fig_motivation`, `fig_decisions`, `fig_costmodel`, `fig_speedup`, `fig_scaling`, `fig_attribution`, `fig_perbatch`, `fig_validity`); the numbers behind each figure are written to `paper/figs/figure_numbers.json`. The script also draws two supporting plots used in the text only (`fig_select`: selection share of the scan time; `fig_pathmodel`: path cost-model accuracy) |
+| Fig. 2, Fig. 5, Table I | LaTeX in `paper_figs/illustrations.tex` (illustrations, not data) |
+| Table II (workload families) | generators in `shadowopt/workloads.py`, parameters in `scripts/hb1_test.py` and `scripts/hb1_harness.py` |
+| Table III (batch times) | `derisk/results/D1/results.jsonl`, records `batch\|<state>\|1000000\|<path>\|T16` (median of 5) and `paired\|...` (least favourable readings); `python scripts/d1_analyze.py` recomputes `D1_summary.json` |
+| Table IV (space, build) | `derisk/results/D1/results.jsonl`, records with `kind` = `build` at N = 1e6 (fields `packed_bytes`, `bitmap_bytes`, `view_bytes`, `bitmap_build_s`, `view_select_s`, `view_build_s`) |
+| Table V (model-estimated QPU usage) | DEV: `python scripts/hb1_harness.py --a15 --summary` (results in `derisk/results/HB1*/`); TEST: `python scripts/hb1_test_partial.py` (writes `results/HB1_TEST/partial_summary.json`, column N0 = 0) |
+| Checking timings (Sec. VIII-E) | `derisk/results/HB3/results.json` |
 
 ## Re-running the experiments
 
