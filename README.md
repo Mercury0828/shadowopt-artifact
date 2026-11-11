@@ -55,7 +55,7 @@ git -C third_party/aequo checkout 2aed9e15626f5f3988d45861b1746599f754a8d0
 | Table III (batch times) | `derisk/results/D1/results.jsonl`, records `batch\|<state>\|1000000\|<path>\|T16` (median of 5) and `paired\|...` (least favourable readings); `python scripts/d1_analyze.py` recomputes `D1_summary.json` |
 | Table IV (space, build) | `derisk/results/D1/results.jsonl`, records with `kind` = `build` at N = 1e6 (fields `packed_bytes`, `bitmap_bytes`, `view_bytes`, `bitmap_build_s`, `view_select_s`, `view_build_s`) |
 | Table V (model-estimated QPU usage) | DEV: `python scripts/hb1_harness.py --a15 --summary` (results in `derisk/results/HB1*/`); TEST: `python scripts/hb1_test_partial.py` (writes `results/HB1_TEST/partial_summary.json`, column N0 = 0) |
-| Checking timings (Sec. VIII-E) | `derisk/results/HB3/results.json` |
+| Checking timings (Sec. VIII-F) | `derisk/results/HB3/results.json` |
 
 ## Re-running the experiments
 
